@@ -2,7 +2,7 @@ body {
     font-family: sans-serif;
 }
 .bacground_2{
-    display: flex;
+    display: block;
     margin: 0 auto;
 }
 .logo_sgu {
@@ -31,9 +31,12 @@ h1 {
 }
 .new_inst{
     margin: 45px;
+    display: block;
 }
 .new_univer {
     border-radius: 50px;
+    display: block;
+
 }
 .new_univer_1{
     font-size: 35px;
