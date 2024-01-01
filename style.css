@@ -1,0 +1,86 @@
+body {
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: rgb(65, 63, 25);
+  }
+  
+  .logo_sgu {
+    width: 200px;
+    height: 200px;
+    display: inline;
+  }
+  header {
+    padding: 20px 0;
+  }
+  .zagolovok{
+    display: inline-block;
+    margin: 20px;
+    color: black;
+  }
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+  }
+  .container_1{
+    display: flow-root;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .menu-item {
+    padding: 10px;
+    text-decoration: none;
+  }
+  
+  .menu-item:hover {
+    background-color: lightblue;
+  }
+  
+  section {
+    padding: 20px 0;
+  }
+  
+  .hero {
+    background-color: transparent;
+  }
+  
+  .video {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .btn {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: lightblue;
+  }
+  
+  @media (max-width: 768px) {
+    .menu {
+      display: none;
+    }
+  
+    .hero {
+      background-color: blue;
+      height: 200px;
+    }
+  
+    .video {
+      height: 100%;
+    }
+  }
+  
