@@ -1,7 +1,5 @@
 body {
     font-family: sans-serif;
-    color: rgb(255, 255, 255);
-    background-color: rgb(65, 63, 25);
   }
   
   .logo_sgu {
@@ -18,7 +16,7 @@ body {
     color: black;
   }
   .container {
-    max-width: 960px;
+    max-width: 1050px;
     margin: 0 auto;
     display: flex;
   }
@@ -28,7 +26,23 @@ body {
   h1 {
     font-size: 2em;
   }
-  
+  .new_inst{
+    margin: 40px;
+  }
+  .new_univer {
+    border-radius: 50px;
+  }
+  .new_univer_1{
+    display: block;
+    margin: 20px;
+    font-size: 50px;
+    border-radius: 50px;
+    width: 800px;
+    height: 60px;
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+  }
   nav {
     display: flex;
     justify-content: space-between;
@@ -73,24 +87,19 @@ body {
     font-size: 25px;
     margin: 20px;
     border-radius: 50px;
-
+  }
+  .new_univer{
+    display: grid;
   }
   .button_5 {
-  width: 230px;
-  height: 60px;
+    width: 230px;
+    height: 60px;
   }
-  @media (max-width: 768px) {
-    .menu {
-      display: none;
-    }
-  
-    .hero {
-      background-color: blue;
-      height: 200px;
-    }
-  
-    .video {
-      height: 100%;
-    }
+  .new_univer_15{
+    border-radius: 50px;
+    margin: 40px;
   }
-  
+  .new_univer_155{
+    display: flex;
+    margin: 0 auto;
+  }
