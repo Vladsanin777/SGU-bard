@@ -100,14 +100,25 @@ body {
   }
   .new_univer_155{
     display: block;
+    margin: 10px 140px;
   }
   .new_univer_1236{
-    display: block;
-    margin: 20px;
+    display: grid;
+    margin: 20px 140px;
     font-size: 50px;
     border-radius: 50px;
     height: 60px;
     color: black;
     text-align: center;
     margin: 20px;
+  }
+  .new_univer_op{
+    margin: 40px 140px;
+    display: block;
+    border-radius: 50px;
+    text-align: center;
+  }
+  .new_univer_op_b{
+    margin: 20px;
+    font-size: 40px;
   }
