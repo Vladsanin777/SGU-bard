@@ -27,7 +27,7 @@ body {
     font-size: 2em;
   }
   .new_inst{
-    margin: 40px;
+    margin: 80px;
   }
   .new_univer {
     border-radius: 50px;
@@ -37,11 +37,9 @@ body {
     margin: 20px;
     font-size: 50px;
     border-radius: 50px;
-    width: 800px;
     height: 60px;
-    color: black;
+    color: white;
     text-align: center;
-    margin: 0 auto;
   }
   nav {
     display: flex;
@@ -98,8 +96,18 @@ body {
   .new_univer_15{
     border-radius: 50px;
     margin: 40px;
+    display: block;
   }
   .new_univer_155{
-    display: flex;
-    margin: 0 auto;
+    display: block;
+  }
+  .new_univer_1236{
+    display: block;
+    margin: 20px;
+    font-size: 50px;
+    border-radius: 50px;
+    height: 60px;
+    color: black;
+    text-align: center;
+    margin: 20px;
   }
