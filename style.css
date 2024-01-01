@@ -1,124 +1,130 @@
 body {
     font-family: sans-serif;
-  }
-  
-  .logo_sgu {
-    width: 200px;
-    height: 200px;
+}
+.bacground_2{
+    display: flex;
+    margin: 0 auto;
+}
+.logo_sgu {
+    width: 120px;
+    height: 120px;
     display: inline;
-  }
-  header {
-    padding: 20px 0;
-  }
-  .zagolovok{
+}
+header {
+    padding: 15px 0;
+}
+.zagolovok{
     display: inline-block;
-    margin: 20px;
+    margin: 15px;
     color: black;
-  }
-  .container {
+}
+.container {
     max-width: 1050px;
     margin: 0 auto;
     display: flex;
-  }
-  .container_1{
+}
+.container_1{
     display: flow-root;
-  }
-  h1 {
-    font-size: 2em;
-  }
-  .new_inst{
-    margin: 80px;
-  }
-  .new_univer {
+}
+h1 {
+    font-size: 1.6em;
+}
+.new_inst{
+    margin: 45px;
+}
+.new_univer {
     border-radius: 50px;
-  }
-  .new_univer_1{
-    display: block;
-    margin: 20px;
-    font-size: 50px;
+}
+.new_univer_1{
+    font-size: 35px;
     border-radius: 50px;
-    height: 60px;
+    height: 40px;
     color: white;
     text-align: center;
-  }
-  nav {
+}
+nav {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .menu-item {
-    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.menu-item {
+    padding: 5px;
     text-decoration: none;
-  }
-  
-  .menu-item:hover {
+}
+
+.menu-item:hover {
     background-color: lightblue;
-  }
-  
-  section {
-    padding: 20px 0;
-  }
-  
-  .hero {
+}
+
+section {
+    padding: 15px 0;
+}
+
+.hero {
     background-color: transparent;
-  }
-  
-  .video {
+}
+
+.video {
     width: 100%;
     height: 100%;
-  }
-  
-  .btn {
+}
+
+.btn {
     background-color: blue;
     color: white;
-    padding: 10px 20px;
+    padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .btn:hover {
+}
+
+.btn:hover {
     background-color: lightblue;
-  }
-  button{
+}
+button{
     color:rgb(255, 255, 255);
-    font-size: 25px;
-    margin: 20px;
+    font-size: 18px;
+    margin: 15px;
     border-radius: 50px;
-  }
-  .new_univer{
-    display: grid;
-  }
-  .button_5 {
-    width: 230px;
-    height: 60px;
-  }
-  .new_univer_15{
-    border-radius: 50px;
-    margin: 40px;
+}
+.new_univer{
     display: block;
-  }
-  .new_univer_155{
-    display: block;
-    margin: 10px 140px;
-  }
-  .new_univer_1236{
-    display: grid;
-    margin: 20px 140px;
-    font-size: 50px;
+}
+.button_5 {
+    width: 150px;
+    height: 40px;
+}
+.new_univer_15{
     border-radius: 50px;
-    height: 60px;
+    margin: 25px;
+    display: block;
+}
+.new_univer_155{
+    display: grid;
+    margin: 5px 100px;
+}
+.new_univer_1236{
+    margin: 25px;
+    font-size: 35px;
+    border-radius: 50px;
+    height: 40px;
     color: black;
     text-align: center;
-    margin: 20px;
-  }
-  .new_univer_op{
-    margin: 40px 140px;
+}
+.new_univer_op{
+    margin: 25px 100px;
     display: block;
     border-radius: 50px;
     text-align: center;
-  }
-  .new_univer_op_b{
-    margin: 20px;
-    font-size: 40px;
-  }
+}
+.new_univer_op_b{
+    margin: 15px;
+    font-size: 30px;
+}
+.osnov_view{
+    display: flex;
+}
+.container_op{
+    margin: 25px;
+    display: flex;
+}

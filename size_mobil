@@ -1,0 +1,7 @@
+is_Mobil() {
+    if (/iPhone|Android|BlackBerry|webOS|Windows Phone/i.test(navigator.userAgent)) {
+        return true;
+    } else {
+        return false;
+    }
+}
