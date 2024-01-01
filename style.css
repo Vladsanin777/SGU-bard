@@ -68,7 +68,17 @@ body {
   .btn:hover {
     background-color: lightblue;
   }
-  
+  button{
+    color:rgb(255, 255, 255);
+    font-size: 25px;
+    margin: 20px;
+    border-radius: 50px;
+
+  }
+  .button_5 {
+  width: 230px;
+  height: 60px;
+  }
   @media (max-width: 768px) {
     .menu {
       display: none;
