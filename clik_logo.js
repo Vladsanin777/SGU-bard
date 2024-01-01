@@ -25,4 +25,8 @@ function smenadizaina(){
     for ( let text of document.querySelectorAll(".new_univer_op")){
         text.style.backgroundColor = ['rgb(84, 194, 21)', 'rgb(0, 0, 255)', 'rgb(243, 219, 3)'][window.n_random];
     }
+    for ( let group of document.querySelectorAll(".new_univer_op_b")){
+        group.style.backgroundColor = ['rgb(30, 65, 25)', 'rgb(25, 30, 65)', 'rgb(65, 63, 25)'][window.n_random];
+    }
 }
+smenadizaina()
