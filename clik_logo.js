@@ -34,5 +34,7 @@ function smenadizaina(){
     for ( let group of document.querySelectorAll(".new_univer_op_b")){
         group.style.backgroundColor = temn_color();
     }
+
 }
+
 smenadizaina()

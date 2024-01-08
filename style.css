@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
 }
-.bacground_2{
+.bacground_21{
     display: flex;
     margin: 0 auto;
 }
@@ -129,5 +129,8 @@ button{
 }
 .container_op{
     margin: 25px;
+    display: flex;
+}
+.bacground_2{
     display: flex;
 }
