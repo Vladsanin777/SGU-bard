@@ -1,6 +1,6 @@
 class ALL {
   katalog() {
-    return [['kjjhh', ['xzcv', 'sdfGF', 'gxcgs']],['jixzcvbio', ['xfbko m', 'vbjhn']]];
+    return [['kjjhh', ['xzcv', 'sdfGF', 'gxcgs']], ['jixzcvbio', ['xfbko m', 'vbjhn']]];
   }
 
   h5_form_temn(h5_name) {
@@ -17,42 +17,49 @@ class ALL {
     return button_file;
   }
 
-  h5_form_ayrc() {
-    return this.h5_form_temn('Документы СГУ');
-  }
-
-  div_form_temn(name_files, class_name) {
+  div_form_ayrc_2(name_files) {
     const div_papca = document.createElement('div');
     div_papca.classList.add('new_univer_op');
-
     for (const file of name_files) {
       div_papca.appendChild(this.button_temn(file));
     }
+    return div_papca;
+  }
+
+  h5_form_ayrc(name_floader) {
+    const h5_1 = document.createElement('h5');
+    h5_1.classList.add('new_univer_1236');
+    h5_1.textContent = name_floader;
+    return h5_1;
+  }
+
+  div_form_temn(name_floader_files) {
+    const div_papca = document.createElement('div');
+    div_papca.classList.add('new_univer_15');
+    div_papca.appendChild(this.h5_form_ayrc(name_floader_files[0]));
+    div_papca.appendChild(this.div_form_ayrc_2(name_floader_files[1]));
 
     return div_papca;
   }
 
   div_form_ayrc() {
     const div_papca = document.createElement('div');
-    div_papca.appendChild(this.h5_form_ayrc());
-
-    for (const name_floader of this.katalog()) {
-      const div_child = this.div_form_temn(name_floader, 'new_univer_1236');
+    div_papca.appendChild(this.h5_form_temn("Документы СГУ")); // Только вызываем h5_form_temn один раз
+    div_papca.classList.add('new_univer_155');
+    for (const name_floader_files of this.katalog()) {
+      const div_child = this.div_form_temn(name_floader_files);
       div_papca.appendChild(div_child);
     }
 
     const div_papca_1 = document.createElement('div');
     div_papca_1.appendChild(div_papca);
-    div_papca_1.classList.add('new_univer_155');
+    div_papca_1.classList.add('new_univer');
 
     const div_papca_2 = document.createElement('div');
     div_papca_2.appendChild(div_papca_1);
-    div_papca_2.classList.add('new_univer');
+    div_papca_2.classList.add('new_inst');
 
-    const div_papca_3 = document.createElement('div');
-    div_papca_3.appendChild(div_papca_1);
-    div_papca_3.classList.add('new_inst');
-
+    // Последний `return` должен быть этим
     return div_papca_2;
   }
 
