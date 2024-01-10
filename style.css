@@ -16,7 +16,7 @@ header {
 .zagolovok{
     display: inline-block;
     margin: 15px;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 .container {
     max-width: 1050px;
@@ -42,7 +42,7 @@ h1 {
     font-size: 35px;
     border-radius: 50px;
     height: 40px;
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 nav {
@@ -75,7 +75,7 @@ section {
 
 .btn {
     background-color: blue;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
@@ -110,7 +110,7 @@ button{
     margin: 25px;
     font-size: 35px;
     border-radius: 50px;
-    color: black;
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 .new_univer_op{
@@ -132,4 +132,7 @@ button{
 }
 .bacground_2{
     display: flex;
+}
+.u1200u{
+    display: grid;
 }

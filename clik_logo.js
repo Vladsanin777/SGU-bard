@@ -16,12 +16,18 @@ function smenadizaina(){
         window.n_random = random
     }
     document.body.style.backgroundColor = temn_color();
-    document.querySelector(".bacground_2").style.backgroundColor = ayrc_color();
+    for ( let group of document.querySelectorAll(".bacground_2")){
+      group.style.backgroundColor = ayrc_color();
+    }
     for ( let button of document.querySelectorAll(".button_5")){
         button.style.backgroundColor = temn_color();
     }
-    document.querySelector(".new_univer").style.backgroundColor = ayrc_color();
-    document.querySelector(".new_univer_1").style.backgroundColor = temn_color();
+    for ( let group of document.querySelectorAll(".new_univer")){
+      group.style.backgroundColor = ayrc_color();
+    }
+    for ( let group of document.querySelectorAll(".new_univer_1")){
+        group.style.backgroundColor = temn_color();
+    }
     for ( let group of document.querySelectorAll(".new_univer_15")){
         group.style.backgroundColor = temn_color();
     }
