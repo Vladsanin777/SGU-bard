@@ -16,7 +16,10 @@ def edit_document_js(list_s):
 def documents_update():
     l = []
     for _i in os.listdir(path="documents"):
-        l.append([_i, os.listdir(path=f"documents/{_i}")])
+        p = []
+        for _n in os.listdir(path=f"documents/{_i}"):
+            p.append([_n, os.listdir(path = f"documents/{_i}/{_n}")])
+        l.append([_i, p])
     print(f"Предварительно:\n{l}\nПредворительно///")
     edit_document_js(l)
     print(l)
