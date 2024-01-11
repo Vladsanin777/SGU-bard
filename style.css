@@ -1,5 +1,19 @@
-body {
-    font-family: sans-serif;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.BG{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
+}
+.BGD{
+    width: 100%
 }
 .bacground_21{
     display: flex;

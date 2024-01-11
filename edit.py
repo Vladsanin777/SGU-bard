@@ -1,13 +1,13 @@
 import os
 
-def edit_document_js(list_s):
-    with open("document_2.js", "r+") as f:
+def edit_js(list_s, line, doc_js):
+    with open(doc_js, "r+") as f:
         lines = f.readlines()
 
         # Удаляем строку с номером line_number
-        lines.pop(2)
+        lines.pop(line)
 
-        lines.insert(2, f"    return {list_s}\n")
+        lines.insert(line, f"    return {list_s}\n")
 
         # Перезаписываем файл
         f.seek(0)
@@ -21,15 +21,20 @@ def documents_update():
             p.append([_n, os.listdir(path = f"documents/{_i}/{_n}")])
         l.append([_i, p])
     print(f"Предварительно:\n{l}\nПредворительно///")
-    edit_document_js(l)
+    edit_js(l, 2, "document_2.js")
     print(l)
 
-
+def fons_update():
+    edit_js(a := (os.listdir(path = "fons")), 1, "clik_logo.js")
+    print(a)
 def setup():
     pip = input()
     match pip:
         case "-d":
             documents_update()
+            setup()
+        case "-f":
+            fons_update()
             setup()
         case "kl":
             pass
