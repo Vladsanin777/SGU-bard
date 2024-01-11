@@ -1,5 +1,5 @@
 function fons_all(){
-    return ['1626974759_15-kartinkin-com-p-anime-vertikalnie-anime-krasivo-16.jpg', 'bikini-styles-anime-girl-cartoon_739685-139.avif', 'an-anime-girl-with-bikini-in-the-flower-garden_889073-731.avif', '1c1882de-e309-9c39-bc30-e265a65312ff.jpeg']
+    return ['1654155663_7-phonoteka-org-p-vertikalnie-oboi-dlya-smartfona-krasivo-11.jpg', '175844-novaya_fantastika-krasochnost-purpur-fioletovyj-vizualnyj_effekt_osveshheniya-2160x3840.jpg', '1669789046_32-pibig-info-p-zhivie-oboi-kosmos-na-telefon-krasivo-34.jpg', 'Красивые-4к-обои-космос-на-телефон-13.jpeg', '4k-kosmos-oboi-na-telefon-15.jpg', '4k-kosmos-oboi-na-telefon-8.jpg', 'kosmos-4k-oboi-na-telefon-48.jpg', 'kosmos-4k-oboi-na-telefon-20.jpg', 'fioletovogo-tsveta-oboi-na-telefon-9.jpg']
 }
 function random_color(){
     return Math.floor(Math.random() * 3)
@@ -21,20 +21,18 @@ function fons_random() {
   img_k.src = `fons/${fons_all()[Math.floor(Math.random() * fons_all().length)]}`;
 
   fon_k.appendChild(img_k);
-  document.body.appendChild(fon_k);
+  return fon_k
 }
 
 
 function smenadizaina(){
-    fons_random()
+    document.body.appendChild(fons_random())
     let random = random_color()
-    if (window.n_random == random){
-        random = random_color
-    } else {
-        window.n_random = random
+    while (window.n_random == random){
+        random = random_color()
     }
-
-
+    window.n_random = random
+    document.querySelector(".logo_sgu").style.backgroundColor = temn_color();
     for ( let button of document.querySelectorAll(".button_5")){
         button.style.backgroundColor = temn_color();
     }

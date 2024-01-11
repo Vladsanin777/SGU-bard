@@ -11,6 +11,7 @@
     top: 0;
     left: 0;
     z-index: -10;
+
 }
 .BGD{
     width: 100%
@@ -23,6 +24,7 @@
     width: 120px;
     height: 120px;
     display: inline;
+    border-radius: 60px;
 }
 header {
     padding: 15px 0;

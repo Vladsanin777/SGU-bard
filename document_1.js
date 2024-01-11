@@ -7,7 +7,7 @@ function ayrc_color(){
 function temn_color(){
     return ['rgb(20, 60, 10, 0.5)', 'rgb(20, 30, 65, 0.5)', 'rgb(65, 63, 25, 0.5)'][window.n_random];
 }
-function document_1(){
+function gl(){
     document.querySelector(".button_glav").style.backgroundColor = temn_color();
 }
-document_1()
+gl()
