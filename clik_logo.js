@@ -11,17 +11,26 @@ function ayrc_color(){
 function temn_color(){
     return ['rgb(20, 60, 10, 0.5)', 'rgb(20, 30, 65, 0.5)', 'rgb(65, 63, 25, 0.5)'][window.n_random];
 }
+
+function random_fons(){
+    return Math.floor(Math.random() * fons_all().length)
+}
 function fons_random() {
-  const fon_k = document.createElement('div');
-  fon_k.classList.add('BG');
+    const fon_k = document.createElement('div');
+    fon_k.classList.add('BG');
 
-  const img_k = document.createElement('img');
-  img_k.classList.add('BGD');
-  // Use the `src` property instead of `style.backgroundImage`
-  img_k.src = `fons/${fons_all()[Math.floor(Math.random() * fons_all().length)]}`;
+    const img_k = document.createElement('img');
+    img_k.classList.add('BGD');
+    let random = random_fons()
+    while (window.f_random == random){
+        random = random_fons()
+    }
+    window.f_random = random
+    // Use the `src` property instead of `style.backgroundImage`
+    img_k.src = `fons/${fons_all()[Math.floor(Math.random() * fons_all().length)]}`;
 
-  fon_k.appendChild(img_k);
-  return fon_k
+    fon_k.appendChild(img_k);
+    return fon_k
 }
 
 
@@ -72,6 +81,7 @@ function resizeWindow_logo_sgu() {
     img.style.width = widthInPixels;
     img.style.height = widthInPixels;
     img.style.marginRight = size_vw(size_f(30))
+    img.style.marginTop = size_vw(size_f(100))
 }
 
 
@@ -79,17 +89,16 @@ function resizeWindow_logo_sgu() {
 function resizeWindow_button_5(){
     for ( var button of document.querySelectorAll(".button_5")){
         button.style.width = size_vw(size_f(15) + 10);
-        button.style.height = size_vw(size_f(30) + 2);
-        button.style.fontSize = size_vw(size_f(60));
+        button.style.height = size_vw(size_f(120) + 3);
+        button.style.fontSize = size_vw(size_f(80) + 1);
         button.style.marginRight = size_vw(size_f(80));
         button.style.marginLeft = size_vw(size_f(80));
-        button.style.marginBottom = size_vw(size_f(60))
     }
 }
 
 function resizeWindow_h1(){
     h1 = document.querySelector("h1")
-    h1.style.margin = `${size_vw(size_f(180) + 1)} 0px`
+    h1.style.marginBottom = size_vw(size_f(180) + 1)
     h1.style.fontSize = size_vw(size_f(180) + 2.7);
 }
 
