@@ -49,3 +49,57 @@ function smenadizaina(){
 
 }
 smenadizaina();
+
+function size_vw(size){
+    return `${size}vw`
+}
+
+function size_vh(size){
+    return `${size}vh`
+}
+
+function size_f(sensitivity){
+
+    // Получаем ширину и высоту окна
+    var b = window.innerWidth;
+    var a = window.innerHeight;
+    return (((a - b) / (a + b) * 100) + 100) / sensitivity;
+}
+
+function resizeWindow_logo_sgu() {
+    var widthInPixels = size_vw(size_f(15) + 5)
+    img = document.querySelector(".logo_sgu")
+    img.style.width = widthInPixels;
+    img.style.height = widthInPixels;
+    img.style.marginRight = size_vw(size_f(30))
+}
+
+
+
+function resizeWindow_button_5(){
+    for ( var button of document.querySelectorAll(".button_5")){
+        button.style.width = size_vw(size_f(15) + 10);
+        button.style.height = size_vw(size_f(30) + 2);
+        button.style.fontSize = size_vw(size_f(60));
+        button.style.marginRight = size_vw(size_f(80));
+        button.style.marginLeft = size_vw(size_f(80));
+        button.style.marginBottom = size_vw(size_f(60))
+    }
+}
+
+function resizeWindow_h1(){
+    h1 = document.querySelector("h1")
+    h1.style.margin = `${size_vw(size_f(180) + 1)} 0px`
+    h1.style.fontSize = size_vw(size_f(180) + 2.7);
+}
+
+function resizeWindow(){
+    resizeWindow_logo_sgu()
+    resizeWindow_button_5()
+    resizeWindow_h1()
+}
+
+
+// Подписываемся на событие resize
+window.addEventListener("resize", resizeWindow);
+resizeWindow()
