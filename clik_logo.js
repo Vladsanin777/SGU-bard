@@ -42,6 +42,7 @@ function smenadizaina(){
     }
     window.n_random = random
     document.querySelector(".logo_sgu").style.backgroundColor = temn_color();
+    document.querySelector(".SGU_zagolovok").style.backgroundColor = temn_color();
     for ( let button of document.querySelectorAll(".button_5")){
         button.style.backgroundColor = temn_color();
     }
@@ -96,16 +97,17 @@ function resizeWindow_button_5(){
     }
 }
 
-function resizeWindow_h1(){
-    h1 = document.querySelector("h1")
-    h1.style.marginBottom = size_vw(size_f(180) + 1)
-    h1.style.fontSize = size_vw(size_f(180) + 2.7);
+function resizeWindow_SGU_zagolovok(){
+    const button = document.querySelector(".SGU_zagolovok")
+    console.log(button)
+    button.style.marginBottom = size_vw(size_f(180) + 1)
+    button.style.fontSize = size_vw(size_f(140) + 2.7);
 }
 
 function resizeWindow(){
     resizeWindow_logo_sgu()
     resizeWindow_button_5()
-    resizeWindow_h1()
+    resizeWindow_SGU_zagolovok();
 }
 
 
