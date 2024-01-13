@@ -19,6 +19,8 @@
 .logo_sgu {
     display: flex;
     border-radius: 60vw;
+    justify-content: center;
+    align-items: center;
 }
 .zagolovok{
     display: inline-block;
@@ -71,6 +73,11 @@ button:not(:hover) {
         box-shadow: 0px 0px 5vw rgba(255, 255, 255, 0.5);
     }
 }
+
+.logo_png{
+    border-radius: 60px;
+}
+
 
 .new_univer_15{
     border-radius: 50px;

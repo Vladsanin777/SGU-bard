@@ -78,11 +78,11 @@ function size_f(sensitivity){
 
 function resizeWindow_logo_sgu() {
     var widthInPixels = size_vw(size_f(15) + 5)
-    img = document.querySelector(".logo_sgu")
-    img.style.width = widthInPixels;
-    img.style.height = widthInPixels;
-    img.style.marginRight = size_vw(size_f(30))
-    img.style.marginTop = size_vw(size_f(100))
+    button = document.querySelector(".logo_sgu")
+    button.style.width = widthInPixels;
+    button.style.height = widthInPixels;
+    button.style.marginRight = size_vw(size_f(30))
+    button.style.marginTop = size_vw(size_f(100))
 }
 
 
@@ -99,18 +99,71 @@ function resizeWindow_button_5(){
 
 function resizeWindow_SGU_zagolovok(){
     const button = document.querySelector(".SGU_zagolovok")
-    console.log(button)
     button.style.marginBottom = size_vw(size_f(180) + 1)
     button.style.fontSize = size_vw(size_f(140) + 2.7);
+    button.style.height = size_vw(size_f(120) + 3);
+    button.style.fontSize = size_vw(size_f(80) + 1);
+    button.style.width = size_vw(size_f(5) + 45);
+}
+
+function resizeWindow_logo_png(){
+    const img = document.querySelector(".logo_png")
+    var widthInPixels = size_vw(size_f(20) + 5)
+    img.style.width = widthInPixels;
+    img.style.height = widthInPixels;
 }
 
 function resizeWindow(){
     resizeWindow_logo_sgu()
     resizeWindow_button_5()
     resizeWindow_SGU_zagolovok();
+    resizeWindow_logo_png()
 }
 
 
 // Подписываемся на событие resize
 window.addEventListener("resize", resizeWindow);
 resizeWindow()
+
+
+
+
+function showSalute() {
+    // Создаём контейнер для салюта.
+    var container = document.createElement("div");
+    container.classList.add("container");
+    document.body.appendChild(container);
+    console.log("gvh")
+    // Создаём отдельные ракеты.
+    for (var i = 0; i < 10; i++) {
+        console.log()
+        var rocket = document.createElement("div");
+        rocket.classList.add("rocket");
+        container.appendChild(rocket);
+
+        // Задаём начальные координаты ракеты.
+        rocket.style.top = Math.random() * 500 + "px";
+        rocket.style.left = Math.random() * 500 + "px";
+
+        // Задаём скорость и направление движения ракеты.
+        var speed = Math.random() * 10 + 5;
+        var direction = Math.random() * 360;
+        rocket.style.transform = "translate(0, 0) rotate(" + direction + "deg)";
+
+        // Запускаем анимацию движения ракеты.
+        var animation = setInterval(function() {
+            // Изменяем координаты ракеты.
+            rocket.style.top = rocket.style.top - speed + "px";
+            rocket.style.left = rocket.style.left - speed * Math.cos(direction) + "px";
+
+            // Если ракета вышла за пределы экрана, удаляем её.
+            if (rocket.style.top < 0 || rocket.style.left < 0 || rocket.style.top > window.innerHeight || rocket.style.left > window.innerWidth) {
+                container.removeChild(rocket);
+              clearInterval(animation);
+            }
+        }, 20);
+    }
+}
+
+// Добавляем обработчик события к кнопке.
+document.querySelector(".SGU_zagolovok").addEventListener("click", showSalute);
