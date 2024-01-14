@@ -3,28 +3,28 @@
     padding: 0;
     box-sizing: border-box;
 }
-.BG{
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -10;
 
+body{
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center top;
 }
-.BGD{
-    width: 100%
-}
+
+
+
 .logo_sgu {
     display: flex;
     border-radius: 60vw;
     justify-content: center;
     align-items: center;
 }
-.zagolovok{
-    display: inline-block;
+.zagolovok {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
 
 
 h1 {
@@ -75,7 +75,7 @@ button:not(:hover) {
 }
 
 .logo_png{
-    border-radius: 60px;
+    border-radius: 60vw;
 }
 
 

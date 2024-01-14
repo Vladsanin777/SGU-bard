@@ -6,36 +6,27 @@ function random_color(){
 }
 
 function ayrc_color(){
-    return ['rgb(80, 180, 35 / 0.5)', 'rgb(40, 50, 220 / 0.5)', 'rgb(180, 180, 10 / 0.5)'][window.n_random];
+    return ['rgb(80, 180, 35)', 'rgb(40, 50, 220)', 'rgba(180, 180, 10)'][window.n_random];
 }
 function temn_color(){
-    return ['rgb(20, 60, 10, 0.5)', 'rgb(20, 30, 65, 0.5)', 'rgb(65, 63, 25, 0.5)'][window.n_random];
+    return ['rgba(20, 60, 10, 0.5)', 'rgba(20, 30, 65, 0.5)', 'rgba(65, 63, 25, 0.5)'][window.n_random];
 }
 
 function random_fons(){
     return Math.floor(Math.random() * fons_all().length)
 }
 function fons_random() {
-    const fon_k = document.createElement('div');
-    fon_k.classList.add('BG');
-
-    const img_k = document.createElement('img');
-    img_k.classList.add('BGD');
     let random = random_fons()
     while (window.f_random == random){
         random = random_fons()
     }
     window.f_random = random
-    // Use the `src` property instead of `style.backgroundImage`
-    img_k.src = `fons/${fons_all()[Math.floor(Math.random() * fons_all().length)]}`;
-
-    fon_k.appendChild(img_k);
-    return fon_k
+    document.querySelector("body").style.backgroundImage = `url(fons/${fons_all()[Math.floor(Math.random() * fons_all().length)]})`;
 }
 
 
 function smenadizaina(){
-    document.body.appendChild(fons_random())
+    fons_random()
     let random = random_color()
     while (window.n_random == random){
         random = random_color()
@@ -55,6 +46,9 @@ function smenadizaina(){
     }
     for ( let group of document.querySelectorAll(".new_univer_op_b")){
         group.style.backgroundColor = temn_color();
+    }
+    for (let button of document.querySelectorAll('button')) {
+        button.style.borderColor = ayrc_color();
     }
 
 }
@@ -77,8 +71,8 @@ function size_f(sensitivity){
 }
 
 function resizeWindow_logo_sgu() {
-    var widthInPixels = size_vw(size_f(15) + 5)
-    button = document.querySelector(".logo_sgu")
+    var widthInPixels = size_vw(size_f(13) + 6)
+    button = document.querySelector(".logo_sgu");
     button.style.width = widthInPixels;
     button.style.height = widthInPixels;
     button.style.marginRight = size_vw(size_f(30))
@@ -113,12 +107,14 @@ function resizeWindow_logo_png(){
     img.style.height = widthInPixels;
 }
 
+
 function resizeWindow(){
-    resizeWindow_logo_sgu()
-    resizeWindow_button_5()
+    resizeWindow_logo_sgu();
+    resizeWindow_button_5();
     resizeWindow_SGU_zagolovok();
-    resizeWindow_logo_png()
+    resizeWindow_logo_png();
 }
+
 
 
 // Подписываемся на событие resize
@@ -128,42 +124,20 @@ resizeWindow()
 
 
 
-function showSalute() {
-    // Создаём контейнер для салюта.
-    var container = document.createElement("div");
-    container.classList.add("container");
-    document.body.appendChild(container);
-    console.log("gvh")
-    // Создаём отдельные ракеты.
-    for (var i = 0; i < 10; i++) {
-        console.log()
-        var rocket = document.createElement("div");
-        rocket.classList.add("rocket");
-        container.appendChild(rocket);
 
-        // Задаём начальные координаты ракеты.
-        rocket.style.top = Math.random() * 500 + "px";
-        rocket.style.left = Math.random() * 500 + "px";
 
-        // Задаём скорость и направление движения ракеты.
-        var speed = Math.random() * 10 + 5;
-        var direction = Math.random() * 360;
-        rocket.style.transform = "translate(0, 0) rotate(" + direction + "deg)";
 
-        // Запускаем анимацию движения ракеты.
-        var animation = setInterval(function() {
-            // Изменяем координаты ракеты.
-            rocket.style.top = rocket.style.top - speed + "px";
-            rocket.style.left = rocket.style.left - speed * Math.cos(direction) + "px";
 
-            // Если ракета вышла за пределы экрана, удаляем её.
-            if (rocket.style.top < 0 || rocket.style.left < 0 || rocket.style.top > window.innerHeight || rocket.style.left > window.innerWidth) {
-                container.removeChild(rocket);
-              clearInterval(animation);
-            }
-        }, 20);
-    }
-}
 
-// Добавляем обработчик события к кнопке.
-document.querySelector(".SGU_zagolovok").addEventListener("click", showSalute);
+
+
+
+
+
+
+
+
+
+
+// Добавляем обработчик события click к кнопке
+document.getElementById('firework').addEventListener('click', onFireworkClick);
