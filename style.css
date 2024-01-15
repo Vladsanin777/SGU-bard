@@ -25,6 +25,16 @@ body{
     flex-direction: column;
 }
 
+#fireworks-canvas{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+}
 
 
 h1 {
@@ -76,6 +86,7 @@ button:not(:hover) {
 
 .logo_png{
     border-radius: 60vw;
+    pointer-events: none;
 }
 
 

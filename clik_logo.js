@@ -120,24 +120,3 @@ function resizeWindow(){
 // Подписываемся на событие resize
 window.addEventListener("resize", resizeWindow);
 resizeWindow()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Добавляем обработчик события click к кнопке
-document.getElementById('firework').addEventListener('click', onFireworkClick);
