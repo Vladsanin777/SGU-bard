@@ -7,11 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> 0c2270f (ghdghk)
     <div class = 'bacground_2'>
         <button class = "logo_sgu" alt="Логотип СГУ" onclick="smenadizaina()">
             <img class = "logo_png" src = "img/tild3061-3763-4539-b438-313933663938____Нов.png" alt="Логотип СГУ">
@@ -76,43 +71,17 @@
     <!--<canvas id="fireworks-canvas"></canvas>-->
     <script src="js/fireworks.js"></script>
     <script>
-        function fn_setup(){
-
-            const canvas = document.createElement("canvas")
-            canvas.id = ("fireworks-canvas")
-            document.body.appendChild(canvas)
-            console.log("bhubh")
-            window.onload = function () {
-                var firework = JS_FIREWORKS.Fireworks({
-                    id : 'fireworks-canvas',
-                    hue : 120,
-                    particleCount : 50,
-                    delay : 0,
-                    minDelay : 20,
-                    maxDelay : 40,
-                    boundaries : { // of respawn and target
-                        top: window.innerHeight / 80,
-                        bottom: window.innerHeight / 20,
-                        left: 0,
-                        right: window.innerWidth / 4
-                    },
-                    fireworkSpeed : 2,
-                    fireworkAcceleration : 1.05,
-                    particleFriction : .95,
-                    particleGravity : 1.5
-                });
-
-                document.getElementById('firework').addEventListener('click', function () {
-                    firework.start(canvas);
-                    setTimeout(function () {
-                        firework.stop(); // Теперь функция имеет тело
-                        fn_setup();
-                        console.log("stop");
-                    }, 5000);
-                });
-            };
-        }
-        fn_setup()
+        function fn_setup() {
+            document.getElementById("firework").addEventListener("click", () => {
+                window.JS_FIREWORKS.start();
+                setTimeout(() => {
+                    window.JS_FIREWORKS.stop();
+                    fn_setup();
+                    console.log("stop");
+                }, 5000);
+            });
+        };
+        fn_setup();
     </script>
 </body>
 </html>

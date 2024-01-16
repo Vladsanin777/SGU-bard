@@ -1,348 +1,96 @@
-/**
- * @required:
- */
+//https://github.com/PixxxeL/js-fireworks/blob/master/js/fireworks.js
 
+class JS_FIREWORKS {
 
-var JS_FIREWORKS = JS_FIREWORKS || {};
+  _constructor() {
+    const canvas = document.createElement('canvas');
+    canvas.id = "fireworks-canvas";
 
-/**
- * @usage:
- *      id: 'fireworks-canvas', // ID элемента canvas для рисования
- *      hue: 120, // Оттенок фейерверков (спектр цветов)
- *      particleCount: 50, // Количество частиц, испускаемых при каждом взрыве
- *      delay: 30, // Начальная задержка перед запуском первого фейерверка
- *      minDelay: 30, // Минимальная задержка между последующими фейерверками
- *      maxDelay: 90, // Максимальная задержка между последующими фейерверками
- *      boundaries: {
- *          top: 50, // Верхняя граница холста
- *          bottom: 240, // Нижняя граница холста
- *          left: 50, // Левая граница холста
- *          right: 590 // Правая граница холста
- *      },
- *      fireworkSpeed: 2, // Начальная скорость фейерверков
- *      fireworkAcceleration: 1.05, // Скорость ускорения фейерверков
- *      particleFriction: .95, // Скорость уменьшения скорости частиц из-за сопротивления воздуха
- *      particleGravity: 1.5 // Сила тяжести, действующая на частицы
- *    });
-
- *    firework.start(); // Запустить симуляцию фейерверков
- *    firework.stop(); // Остановить симуляцию фейерверков
- */
-JS_FIREWORKS.Fireworks = function (options) {
-
-    'use strict';
-
-    if (!(this instanceof JS_FIREWORKS.Fireworks)) {
-        return new JS_FIREWORKS.Fireworks(options);
-    }
-    console.log("sx")
-
-    options = options || {};
-
-    var _self   = this,
-        _NS     = JS_FIREWORKS,
-        _Class  = _NS.Fireworks,
-        _proto  = _Class.prototype,
-        _canvas = document.getElementById('fireworks-canvas'),
-        _ctx    = _canvas.getContext ? _canvas.getContext('2d') : null,
-        _width  = _canvas.width,
-        _height = _canvas.height,
-        _hue        = options.hue || 120,
-        _isRunning  = false,
-        _fireworks  = [],
-        _particles  = [],
-        _particleCount = options.particleCount || 50,
-        _tick       = 0,
-        _delay      = options.delay || 30,
-        _minDelay   = options.minDelay || 30,
-        _maxDelay   = options.maxDelay || 90,
-        _boundaries = options.boundaries || {
-            top    : 50,
-            bottom : _height * .5,
-            left   : 50,
-            right  : _width - 50
-        },
-        _loop         = _NS.getRenderLoop(),
-        _randRange    = _NS.randomRange,
-        _randIntRange = _NS.randomIntRange,
-        _Firework     = _NS.Firework,
-        _Particle     = _NS.Particle;
-
-
-    _Class.settings = {
-        fireworkSpeed : options.fireworkSpeed || 2,
-        fireworkAcceleration : options.fireworkAcceleration || 1.05,
-        particleFriction : options.particleFriction || .95,
-        particleGravity : options.particleGravity || 1.5
+    this._canvas = canvas;
+    document.body.appendChild(this._canvas);
+    this.tmp = 5000
+    this._ctx = this._canvas.getContext('2d');
+    this._width = window.innerWidth;
+    this._height = window.innerHeight;
+    this._hue = 120;
+    this._particleCount = 50;
+    this._tick = 0;
+    this._fps = 30;
+    this._minDelay = 30;
+    this._maxDelay = 90;
+    this._boundaries = {
+      top: 50,
+      bottom: this._height * 0.5,
+      left: 50,
+      right: this._width - 50
     };
+  }
 
-    _Class.version = '1.0.2';
+  start() {
+      console.log("gh")
+      this._isRunning = true;
+      this._constructor();
+      while (this._isRunning){
+          console.log("][[]]")
+          this._render();
+      }
+  }
+
+  stop() {
+      console.error("w")
+      this._isRunning = false;
+      this._canvas.remove();
+  }
+
+  _render() {
+      var tmp;
+      this._render;
+      this._hue += 0.5;
+      this._ctx.globalCompositeOperation = 'destination-out';
+      this._ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+      this._ctx.fillRect(0, 0, this._width, this._height);
+      this._ctx.globalCompositeOperation = 'lighter';
+
+      for (var i = 0; i < this.tmp.length; i++) {
+        this.tmp[i].draw();
+        this.tmp[i].update(function () {
+          this.tmp.splice(i, 1);
+        });
+      }
+
+      if (this._tick === this._fps) {
+          console.log("op")
+          this._width / 2,
+          this._height,
+          this._randIntRange(this._boundaries.left, this._boundaries.right),
+          this._randIntRange(this._boundaries.top, this._boundaries.bottom),
+          this._ctx,
+          this._hue
+          this._tick = 0;
+      }
+      this._tick++;
+  };
 
 
-    _self.start = function () {
 
+  _randIntRange(min, max) {
+    var cached = {};
 
-        _isRunning = true;
-        _fireworks = [];
-        _particles = [];
-        _render();
+    return function () {
+      if (cached[min] === undefined) {
+        cached[min] = _randomIntRange(min, max);
+      }
+      return cached[min];
     };
-
-    _self.stop = function () {
-        _isRunning = false;
-        var canvas = document.getElementById("fireworks-canvas");
-        canvas.remove();
-    };
-
-    _self.isRunning = function () {
-        return _isRunning;
-    };
-
-    _self.clear = function () {
-        if (!_ctx) {
-            return;
-        }
-        _ctx.globalCompositeOperation = 'source-over';
-        _ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-        _ctx.fillRect(0, 0, _width, _height);
-    };
+  }
 
 
+  _distance(x1, y1, x2, y2) {
+    var dx = x2 - x1,
+      dy = y2 - y1;
 
-    var _render = function () {
-        if (!_ctx || !_isRunning) {
-            return;
-        }
-        var tmp, count;
-        _loop(_render);
-        _hue += 0.5;
-        _ctx.globalCompositeOperation = 'destination-out';
-        _ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-        _ctx.fillRect(0, 0, _width, _height);
-        _ctx.globalCompositeOperation = 'lighter';
-        tmp = _fireworks.length;
-        // render fireworks
-        while (tmp--) {
-            _fireworks[tmp].draw();
-            _fireworks[tmp].update( function (x, y, hue) {
-                count = _particleCount;
-                while (count--) {
-                    _particles.push(_Particle(x, y, _ctx, hue));
-                }
-                _fireworks.splice(tmp, 1);
-            });
-        }
-        // render particles
-        tmp = _particles.length;
-        while (tmp--) {
-            _particles[tmp].draw();
-            _particles[tmp].update( function () {
-                _particles.splice(tmp, 1);
-            });
-        }
-        // spawn firework
-        if (_tick === _delay) {
-            _fireworks.push(_Firework(
-                _width * .5,
-                _height,
-                _randIntRange(_boundaries.left, _boundaries.right),
-                _randIntRange(_boundaries.top, _boundaries.bottom),
-                _ctx,
-                _hue
-            ));
-            _delay = _randIntRange(_minDelay, _maxDelay);
-            _tick = 0;
-        }
-        _tick++;
-    };
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+}
 
-
-    return _self;
-
-};
-
-/**
- *
- */
-JS_FIREWORKS.Firework = function (x1, y1, x2, y2, context, hue) {
-
-    'use strict';
-
-    if (!(this instanceof JS_FIREWORKS.Firework)) {
-        return new JS_FIREWORKS.Firework(x1, y1, x2, y2, context, hue);
-    }
-
-    var _self     = this,
-        _NS       = JS_FIREWORKS,
-        _Class    = _NS.Firework,
-        _proto    = _Class.prototype,
-        _settings = JS_FIREWORKS.Fireworks.settings,
-        _x   = x1,
-        _y   = y1,
-        _sx  = x1,
-        _sy  = y1,
-        _dx  = x2,
-        _dy  = y2,
-        _ctx = context,
-        _totalDistance   = 0,
-        _currentDistance = 0,
-        _coordinates     = [],
-        _coordinateCount = 3,
-        _angle           = 0,
-        _speed           = _settings.fireworkSpeed,
-        _acceleration    = _settings.fireworkAcceleration,
-        _hue             = hue,
-        _brightness      = 0,
-        _randIntRange = _NS.randomIntRange,
-        _distance     = _NS.distance,
-        _sin          = Math.sin,
-        _cos          = Math.cos;
-
-
-    _self.update = function (callback) {
-        _coordinates.pop();
-        _coordinates.unshift([_x, _y]);
-        _speed *= _acceleration;
-        var vx = _cos(_angle) * _speed,
-            vy = _sin(_angle) * _speed;
-        _currentDistance = _distance(_sx, _sy, _x + vx, _y + vy);
-        if (_currentDistance >= _totalDistance) {
-            callback(_dx, _dy, _hue);
-        } else {
-            _x += vx;
-            _y += vy;
-        }
-    };
-
-    _self.draw = function () {
-        var last = _coordinates.length - 1;
-        _ctx.beginPath();
-        _ctx.moveTo(_coordinates[last][0], _coordinates[last][1]);
-        _ctx.lineTo(_x, _y);
-        _ctx.strokeStyle = 'hsl(' + _hue + ', 100%, ' + _brightness + '%)';
-        _ctx.stroke();
-    };
-
-
-    ( function () {
-        _totalDistance = _distance(_sx, _sy, _dx, _dy);
-        while (_coordinateCount--) {
-            _coordinates.push([_x, _y]);
-        }
-        _angle = Math.atan2(_dy - _sy, _dx - _sx);
-        _brightness = _randIntRange(50, 70);
-    })();
-
-    return _self;
-
-};
-
-/**
- *
- */
-JS_FIREWORKS.Particle = function (x, y, context, hue) {
-
-    'use strict';
-
-    if (!(this instanceof JS_FIREWORKS.Particle)) {
-        return new JS_FIREWORKS.Particle(x, y, context, hue);
-    }
-
-    var _self     = this,
-        _NS       = JS_FIREWORKS,
-        _Class    = _NS.Particle,
-        _proto    = _Class.prototype,
-        _settings = JS_FIREWORKS.Fireworks.settings,
-        _x        = x,
-        _y        = y,
-        _ctx      = context,
-        _coordinates     = [],
-        _coordinateCount = 5,
-        _angle    = 0,
-        _speed    = 0,
-        _friction   = _settings.particleFriction,
-        _gravity    = _settings.particleGravity,
-        _hue        = hue,
-        _brightness = 0,
-        _alpha      = 1,
-        _decay      = 0,
-        _randRange    = _NS.randomRange,
-        _randIntRange = _NS.randomIntRange,
-        _2PI          = Math.PI * 2,
-        _sin          = Math.sin,
-        _cos          = Math.cos;
-
-    _self.update = function (callback) {
-        _coordinates.pop();
-        _coordinates.unshift([_x, _y]);
-        _speed *= _friction;
-        _x += _cos(_angle) * _speed;
-        _y += _sin(_angle) * _speed + _gravity;
-        _alpha -= _decay;
-        if (_alpha <= _decay) {
-            callback();
-        }
-    };
-
-    _self.draw = function () {
-        var last = _coordinates.length - 1;
-        _ctx.beginPath();
-        _ctx.moveTo(_coordinates[last][0], _coordinates[last][1]);
-        _ctx.lineTo(_x, _y);
-        _ctx.strokeStyle = 'hsla(' + _hue + ', 100%, ' + _brightness + '%, ' + _alpha + ')';
-        _ctx.stroke();
-    };
-
-
-    ( function () {
-        while (_coordinateCount--) {
-            _coordinates.push([_x, _y ]);
-        }
-        _angle = _randRange(0, _2PI);
-        _speed = _randIntRange(1, 10);
-        _hue   = _randIntRange(_hue - 20, _hue + 20);
-        _brightness = _randIntRange(50, 80);
-        _decay = _randRange(.015, .03);
-    })();
-
-    return _self;
-
-};
-
-/**
- *
- */
-JS_FIREWORKS.randomRange = function (min, max) {
-    return (Math.random() * ( max - min ) + min);
-};
-
-/**
- *
- */
-JS_FIREWORKS.randomIntRange = function (min, max) {
-    return JS_FIREWORKS.randomRange(min, max)|0;
-};
-
-/**
- *
- */
-JS_FIREWORKS.distance = function (x1, y1, x2, y2) {
-    var pow = Math.pow;
-    return Math.sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
-};
-
-/**
- *
- */
-JS_FIREWORKS.getRenderLoop = function () {
-    return (
-        window.requestAnimationFrame ||
-        window.webkitRequestAnimationFrame ||
-        window.mozRequestAnimationFrame ||
-        window.oRequestAnimationFrame ||
-        window.msRequestAnimationFrame ||
-        function (callback) {
-            return window.setTimeout(callback, 1000 / 60);
-        }
-    );
-};
+window.JS_FIREWORKS = new JS_FIREWORKS
