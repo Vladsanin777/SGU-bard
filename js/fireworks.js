@@ -1,96 +1,103 @@
-//https://github.com/PixxxeL/js-fireworks/blob/master/js/fireworks.js
-
 class JS_FIREWORKS {
 
-  _constructor() {
+  constructor() {
+    // Правила класса
     const canvas = document.createElement('canvas');
     canvas.id = "fireworks-canvas";
-
     this._canvas = canvas;
-    document.body.appendChild(this._canvas);
-    this.tmp = 5000
-    this._ctx = this._canvas.getContext('2d');
-    this._width = window.innerWidth;
-    this._height = window.innerHeight;
-    this._hue = 120;
-    this._particleCount = 50;
-    this._tick = 0;
-    this._fps = 30;
-    this._minDelay = 30;
-    this._maxDelay = 90;
-    this._boundaries = {
-      top: 50,
-      bottom: this._height * 0.5,
-      left: 50,
-      right: this._width - 50
-    };
-  }
+    this.fireworks = [];
+    this.ctx = this.canvas.getContext('2d');
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
+    this.hue = 120;
+    this.particleCount = 50;
+    this.tick = 0;
+    this.fps = 30;
+    this.minDelay = 30;
+    this.maxDelay = 90;
+    this.coordinates = [];
+    this.particles = [];
 
-  start() {
-      console.log("gh")
-      this._isRunning = true;
-      this._constructor();
-      while (this._isRunning){
-          console.log("][[]]")
-          this._render();
-      }
+    // Методы класса
+
+    this._render();
   }
 
   stop() {
-      console.error("w")
-      this._isRunning = false;
-      this._canvas.remove();
+    // Правила метода
+
+    this.isRunning = false;
+    this.canvas.parentNode.removeChild(this.canvas);
   }
 
-  _render() {
-      var tmp;
-      this._render;
-      this._hue += 0.5;
-      this._ctx.globalCompositeOperation = 'destination-out';
-      this._ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-      this._ctx.fillRect(0, 0, this._width, this._height);
-      this._ctx.globalCompositeOperation = 'lighter';
+  draw() {
+    // Правила метода
 
-      for (var i = 0; i < this.tmp.length; i++) {
-        this.tmp[i].draw();
-        this.tmp[i].update(function () {
-          this.tmp.splice(i, 1);
-        });
-      }
-
-      if (this._tick === this._fps) {
-          console.log("op")
-          this._width / 2,
-          this._height,
-          this._randIntRange(this._boundaries.left, this._boundaries.right),
-          this._randIntRange(this._boundaries.top, this._boundaries.bottom),
-          this._ctx,
-          this._hue
-          this._tick = 0;
-      }
-      this._tick++;
+    var last = this.coordinates.length - 1;
+    this.ctx.beginPath();
+    this.ctx.moveTo(this.coordinates[last][0], this.coordinates[last][1]);
+    this.ctx.lineTo(this.x, this.y);
+    this.ctx.strokeStyle = `hsl(${this.hue}, 100%, ${this.brightness }%)`;
+    this.ctx.stroke();
   };
 
+  update(callback) {
+    // Правила метода
 
+    this.coordinates.pop();
+    this.coordinates.unshift([this.x, this.y]);
+    this.speed *= this.acceleration;
+    var vx = Math.cos(this.angle) * this.speed,
+      vy = Math.sin(this.angle) * this.speed;
+    this.currentDistance = this.distance(this.sx, this.sy, this.x + vx, this.y + vy);
+    if (this.currentDistance >= this.totalDistance) {
+      callback(this.dx, this.dy, this.hue);
+    } else {
+      this.x += vx;
+      this.y += vy;
+    }
+  };
 
-  _randIntRange(min, max) {
-    var cached = {};
+  distance(x1, y1, x2, y2) {
+    // Правила метода
 
-    return function () {
-      if (cached[min] === undefined) {
-        cached[min] = _randomIntRange(min, max);
-      }
-      return cached[min];
-    };
+    return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+  };
+
+  _render() {
+    // Правила метода
+
+    this.hue += 0.5;
+    this.ctx.globalCompositeOperation = 'destination-out';
+    this.ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+    this.ctx.fillRect(0, 0, this.width, this.height);
+    this.ctx.globalCompositeOperation = 'lighter';
+    var tmp = this.fireworks.length;
+    while (tmp > 0) {
+      tmp--;
+      this.fireworks[tmp].draw();
+      this.fireworks[tmp].update(function (x, y, hue) {
+        count = _particleCount;
+        while (count--) {
+          this.particles.appendChild(this.Particle(x, y, this.ctx, hue));
+        }
+        this.fireworks.splice(tmp, 1);
+      });
+    }
+    // ...
   }
 
+  _randomRange(min, max) {
+    // Правила метода
 
-  _distance(x1, y1, x2, y2) {
-    var dx = x2 - x1,
-      dy = y2 - y1;
+    return Math.random() * (max - min) + min;
+  };
 
-    return Math.sqrt(dx * dx + dy * dy);
-  }
+  _randomIntRange(min, max) {
+    // Правила метода
+
+    return this._randomRange(min, max)|0;
+  };
 }
 
-window.JS_FIREWORKS = new JS_FIREWORKS
+window.JS_FIREWORKS = new JS_FIREWORKS;

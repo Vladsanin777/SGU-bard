@@ -73,7 +73,7 @@
     <script>
         function fn_setup() {
             document.getElementById("firework").addEventListener("click", () => {
-                window.JS_FIREWORKS.start();
+                window.JS_FIREWORKS.constructor();
                 setTimeout(() => {
                     window.JS_FIREWORKS.stop();
                     fn_setup();
@@ -83,5 +83,6 @@
         };
         fn_setup();
     </script>
+    <canvas id = "fireworks-canvas"></canvas>
 </body>
 </html>
