@@ -27,6 +27,9 @@ function fons_random() {
 function size_ikonki_for_glav(){
     return Math.floor(window.innerWidth * 0.11 + 100)
 }
+function size_h5_for_glav(){
+    return Math.floor(window.innerWidth * 0.011 + 15)
+}
 function size_px(size){
     return `${size}px`
 }
@@ -115,7 +118,7 @@ function resizeWindow_ikonki_glav(){
         button.style.width = widthInPixels;
         button.style.height = widthInPixels;
     }
-    var widthInPixels_f = size_px((size_f(180) -  0.3) * 100)
+    var widthInPixels_f = size_px(size_h5_for_glav())
     console.log(widthInPixels_f)
     for (let h5 of document.querySelectorAll('h5')){
         h5.style.fontSize = widthInPixels_f
