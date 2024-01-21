@@ -119,7 +119,6 @@ function resizeWindow_ikonki_glav(){
         button.style.height = widthInPixels;
     }
     var widthInPixels_f = size_px(size_h5_for_glav())
-    console.log(widthInPixels_f)
     for (let h5 of document.querySelectorAll('h5')){
         h5.style.fontSize = widthInPixels_f
     }

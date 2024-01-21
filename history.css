@@ -1,0 +1,8 @@
+.history_SGU{
+    border-radius: 60vh;
+    padding: 2vw 4vw;
+    margin: 1vw;
+}
+.history_SGU_div{
+    display: grid;
+}

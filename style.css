@@ -130,6 +130,7 @@ button:not(:hover) {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 4vw;
 }
 .u1200u{
     display: grid;
