@@ -24,7 +24,12 @@ function fons_random() {
     document.querySelector("body").style.backgroundImage = `url(fons/${fons_all()[Math.floor(Math.random() * fons_all().length)]})`;
 }
 
-
+function size_ikonki_for_glav(){
+    return Math.floor(window.innerWidth * 0.11 + 100)
+}
+function size_px(size){
+    return `${size}px`
+}
 function smenadizaina(){
     fons_random()
     let random = random_color()
@@ -48,7 +53,6 @@ function smenadizaina(){
         button.style.borderColor = ayrc_color();
         button.style.backgroundColor = temn_color();
     }
-
 }
 smenadizaina();
 
@@ -104,13 +108,26 @@ function resizeWindow_logo_png(){
     img.style.width = widthInPixels;
     img.style.height = widthInPixels;
 }
-
+function resizeWindow_ikonki_glav(){
+    var widthInPixels_n = size_ikonki_for_glav()
+    var widthInPixels = size_px(widthInPixels_n)
+    for (let button of document.querySelectorAll('.img_glav')) {
+        button.style.width = widthInPixels;
+        button.style.height = widthInPixels;
+    }
+    var widthInPixels_f = size_px((size_f(180) -  0.3) * 100)
+    console.log(widthInPixels_f)
+    for (let h5 of document.querySelectorAll('h5')){
+        h5.style.fontSize = widthInPixels_f
+    }
+}
 
 function resizeWindow(){
     resizeWindow_logo_sgu();
     resizeWindow_button_5();
     resizeWindow_SGU_zagolovok();
     resizeWindow_logo_png();
+    resizeWindow_ikonki_glav()
 }
 
 
