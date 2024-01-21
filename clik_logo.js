@@ -34,9 +34,6 @@ function smenadizaina(){
     window.n_random = random
     document.querySelector(".logo_sgu").style.backgroundColor = temn_color();
     document.querySelector(".SGU_zagolovok").style.backgroundColor = temn_color();
-    for ( let button of document.querySelectorAll(".button_5")){
-        button.style.backgroundColor = temn_color();
-    }
     for ( let group of document.querySelectorAll(".new_univer_1")){
         group.style.backgroundColor = temn_color();
     }
@@ -49,6 +46,7 @@ function smenadizaina(){
     }
     for (let button of document.querySelectorAll('button')) {
         button.style.borderColor = ayrc_color();
+        button.style.backgroundColor = temn_color();
     }
 
 }

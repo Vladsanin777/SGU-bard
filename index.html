@@ -14,11 +14,37 @@
         <div class = "zagolovok">
             <button class = "SGU_zagolovok" id = "firework">Саратовский государственный университет</button>
             <div class = "osnov_view">
-                <button class = "button_5">О СГУ</button>
-                <button class = "button_5" onclick="location.href='document.html'">Документы</button>
-                <button class = "button_5">Новости</button>
+                <button class = "button_5">Главная</button>
+                <button class = "button_5" onclick="location.href='document.html'">История</button>
+                <button class = "button_5">Соцсети</button>
             </div>
         </div>
+    </div>
+    <div class = "osnova_glav">
+        <button class = "button_glav">
+            <h5>Абитуриентам</h5>
+            <img class = "img_glav" src = "img/На главной странице/Абитуриентам.png">
+        </button>
+        <button class = "button_glav">
+            <h5>Новости</h5>
+            <img class = "img_glav" src = "img/На главной странице/Новости.png">
+        </button>
+        <button class = "button_glav">
+            <h5>Документы</h5>
+            <img class = "img_glav" src = "img/На главной странице/Документы.png">
+        </button>
+        <button class = "button_glav">
+            <h5>Наука</h5>
+            <img class = "img_glav" src = "img/На главной странице/Наука.png">
+        </button>
+        <button class = "button_glav">
+            <h5>Приподаватели</h5>
+            <img class = "img_glav" src = "img/На главной странице/Преподаватели.png">
+        </button>
+        <button class = "button_glav">
+            <h5>Библиотеки</h5>
+            <img class = "img_glav" src = "img/На главной странице/Библиотеки.png">
+        </button>
     </div>
     <!--
     <div class = "new_inst">
@@ -44,7 +70,7 @@
                         <button class = "new_univer_op_b">Институт филологии и журналистики</button>
                         <button class = "new_univer_op_b">Институт химии</button>
                         <button class = "new_univer_op_b">Институт дополнительного профессионального образования</button>
-                    </div>
+                    </div>img/На главной странице/Абитуриентам.png
                 </div>
                 <div class = "new_univer_15">
                     <h5 class = "new_univer_1236">Факультеты</h5>
@@ -67,22 +93,17 @@
         </div>
     </div>
     -->
+    <canvas id = "fireworks-canvas"></canvas>
     <script src = "clik_logo.js"></script>
     <!--<canvas id="fireworks-canvas"></canvas>-->
     <script src="js/fireworks.js"></script>
     <script>
         function fn_setup() {
             document.getElementById("firework").addEventListener("click", () => {
-                window.JS_FIREWORKS.constructor();
-                setTimeout(() => {
-                    window.JS_FIREWORKS.stop();
-                    fn_setup();
-                    console.log("stop");
-                }, 5000);
+                (new All_render_form).setup()
             });
         };
         fn_setup();
     </script>
-    <canvas id = "fireworks-canvas"></canvas>
 </body>
 </html>
