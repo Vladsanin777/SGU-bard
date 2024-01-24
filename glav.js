@@ -1,11 +1,12 @@
 function size_glavBorder(x){
     return Math.floor(window.innerWidth / x);
 }
-
+function size_glavBorder_fontSize(x){
+    return Math.floor(window.innerWidth  / x * window.innerHeight)
+}
 
 function resizeWindow_glav_button(){
     var size_bi = size_px(size_glavBorder(22))
-    console.log(size_bi)
     var size_bi_1 = size_px(size_glavBorder(50))
     for (let button of document.querySelectorAll('.button_glav')) {
         button.style.borderRadius = size_bi;
@@ -13,9 +14,12 @@ function resizeWindow_glav_button(){
     }
 }
 function resizeWindow_glav_h5(){
-    var size_bi = `${size_px(size_glavBorder(50))} 0px`;
+    var size_bi = size_px(size_glavBorder_fontSize(90000) + 12)
+    console.log(size_bi)
+    var size_bi_1 = `${size_px(size_glavBorder(50))} 0px`;
     for (let h5 of document.querySelectorAll('h5')) {
-        h5.style.padding = size_bi;
+        h5.style.padding = size_bi_1;
+        h5.style.fontSize = size_bi
     }
 }
 
