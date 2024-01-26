@@ -49,25 +49,23 @@ class ALL {
   }
 
   div_form_ayrc(name_documents) {
-    const div_papca = document.createElement('div');
-    div_papca.appendChild(this.h5_form_temn(name_documents[0]));
-    div_papca.classList.add('new_univer_155');
+    const div_papca_1 = document.createElement('div');
+    div_papca_1.classList.add('new_ind');
+
 
     for (const name_floader_files of name_documents[1]) {
       const div_child = this.div_form_temn(name_floader_files, name_documents[0]);
-      div_papca.appendChild(div_child);
+      div_papca_1.appendChild(div_child);
     }
 
-    const div_papca_1 = document.createElement('div');
-    div_papca_1.appendChild(div_papca);
-    div_papca_1.classList.add('new_univer');
 
-    const div_papca_2 = document.createElement('div');
-    div_papca_2.appendChild(div_papca_1);
-    div_papca_2.classList.add('new_inst');
 
+    const div_papca = document.createElement('div');
+    div_papca.appendChild(this.h5_form_temn(name_documents[0]));
+    div_papca.classList.add('new_inst');
+    div_papca.appendChild(div_papca_1)
     // Последний `return` должен быть этим
-    return div_papca_2;
+    return div_papca;
   }
   setup_group(){
     const div_papca = document.createElement('div');

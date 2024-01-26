@@ -51,27 +51,11 @@ h1 {
     display: flex;
     color: rgb(256, 256, 256)
 }
-.new_inst{
-    margin: 45px;
-    display: block;
-}
-.new_univer {
-    border-radius: 50px;
-    display: block;
-
-}
-.new_univer_1{
-    font-size: 35px;
-    border-radius: 50px;
-    height: 40px;
-    color: rgb(255, 255, 255);
-    text-align: center;
-}
 
 
-.new_univer{
-    display: block;
-}
+
+
+
 
 button{
     border-radius: 50vw;
@@ -100,41 +84,13 @@ button:not(:hover) {
 }
 
 
-.new_univer_15{
-    border-radius: 50px;
-    margin: 25px;
-    display: block;
-}
-.new_univer_155{
-    display: grid;
-    margin: 5px 100px;
-}
-.new_univer_1236{
-    margin: 25px;
-    font-size: 35px;
-    border-radius: 50px;
-    color: rgb(255, 255, 255);
-    text-align: center;
-}
-.new_univer_op{
-    margin: 25px 100px;
-    display: block;
-    border-radius: 50px;
-    text-align: center;
-}
-.new_univer_op_b{
-    margin: 15px;
-    font-size: 30px;
-}
 .bacground_2{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 4vw;
 }
-.u1200u{
-    display: grid;
-}
+
 .osnov_view{
     display: flex;
     justify-content: center;

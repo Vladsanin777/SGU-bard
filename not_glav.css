@@ -1,0 +1,47 @@
+.new_univer_15{
+    border-radius: 50px;
+    flex: 0 0 25%;
+    margin: 10px;
+}
+
+.new_univer_1236{
+    margin: 25px;
+    font-size: 35px;
+    border-radius: 50px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+.new_univer_op{
+    margin: 25px 100px;
+    display: grid;
+    border-radius: 50px;
+    text-align: center;
+}
+.new_univer_op_b{
+    margin: 15px;
+    font-size: 30px;
+}
+.u1200u{
+    display: grid;
+}
+.new_inst{
+    margin: 45px;
+    display: block;
+}
+
+.new_univer_1{
+    font-size: 35px;
+    border-radius: 50px;
+    height: 40px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+.u1200u{
+    display: grid;
+}
+.new_ind {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
