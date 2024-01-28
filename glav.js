@@ -25,11 +25,10 @@ function resizeWindow_glav_h5(){
     }
 }
 function resizeWindow_ikonki_glav(){
-    var widthInPixels_n = size_ikonki_for_glav()
-    var widthInPixels = size_px(widthInPixels_n)
-    for (let button of document.querySelectorAll('.img_glav')) {
-        button.style.width = widthInPixels;
-        button.style.height = widthInPixels;
+    var widthInPixels = size_px(size_ikonki_for_glav())
+    for (let img of document.querySelectorAll('.img_glav')) {
+        img.style.width = widthInPixels;
+        img.style.height = widthInPixels;
     }
 }
 function resizeWindow_1(){

@@ -1,6 +1,4 @@
 .new_univer_15{
-    border-radius: 50px;
-    margin: 10px;
     width: 550px;
 }
 
@@ -24,14 +22,12 @@
     display: grid;
 }
 .new_inst{
-    margin: 45px;
     display: block;
 }
 
 .new_univer_1{
     font-size: 35px;
     border-radius: 50px;
-    height: 40px;
     color: rgb(255, 255, 255);
     text-align: center;
 }
