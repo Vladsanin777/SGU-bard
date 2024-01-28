@@ -32,25 +32,11 @@ function resizeWindow_ikonki_glav(){
         button.style.height = widthInPixels;
     }
 }
-
 function resizeWindow_1(){
-    resizeWindow_glav_button();
-    resizeWindow_glav_h5();
     resizeWindow_ikonki_glav();
+    resizeWindow_glav_h5();
+    resizeWindow_glav_button();
 }
 
 window.addEventListener("resize", resizeWindow_1);
 resizeWindow_1();
-
-
-function gcd(a, b) {
-    while (b !== 0) {
-        let temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}
-
-// Тесты
-console.log(gcd(1600, 900));
