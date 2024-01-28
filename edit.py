@@ -21,7 +21,7 @@ def documents_update():
             p.append([_n, os.listdir(path = f"documents/{_i}/{_n}")])
         l.append([_i, p])
     print(f"Предварительно:\n{l}\nПредворительно///")
-    edit_js(l, 2, "document_2.js")
+    edit_js(l, 1, "document_spisok.js")
     print(l)
 
 def fons_update():
