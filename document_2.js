@@ -1,4 +1,31 @@
-class ALL {
+class ALL_1 {
+  button_temn(button_name) {
+    const buttonName = button_name;
+    const button_file = document.createElement('button');
+    button_file.classList.add('new_univer_op_b');
+    button_file.textContent = button_name;
+    button_file.addEventListener('click', () => {
+
+    });
+    return button_file;
+  }
+  setup_group(){
+    const div_papca = document.createElement('div');
+    div_papca.classList.add('div_all_class_document');
+    for (let i of katalog()){
+      div_papca.appendChild(this.button_temn(i[0]));
+    }
+    return div_papca
+  }
+  setup_div_final(){
+    const div = this.setup_group();
+    document.body.appendChild(div);
+  }
+}
+(new ALL_1).setup_div_final()
+
+
+class ALL_2 {
   h5_form_temn(h5_name) {
     const h5_1 = document.createElement('h5');
     h5_1.classList.add('new_univer_1');
@@ -76,5 +103,4 @@ class ALL {
     document.body.appendChild(div);
   }
 }
-i = new ALL
-i.div_setup_final()
+(new ALL_2).div_setup_final()

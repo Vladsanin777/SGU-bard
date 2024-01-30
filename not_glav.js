@@ -18,12 +18,10 @@ function resizeWindow_not_glav_button(){
 
 
 function resizeWindow_not_glav_div(){
-    var size_bi = size_px(size_gl(22))
     var size_bi_1 = size_px(size_gl(50))
     var widthInPixels = size_px(size_slolbets_div_not_glav())
     var size_margin = size_px(size_margin_div_not_glav())
     for (let div of document.querySelectorAll('.new_univer_15')) {
-        div.style.borderRadius = size_bi;
         div.style.paddingBottom = size_bi_1;
         div.style.width = widthInPixels;
         div.style.margin = size_margin
