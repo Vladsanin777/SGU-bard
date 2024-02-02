@@ -12,8 +12,9 @@ class ALL_1 {
   setup_group(){
     const div_papca = document.createElement('div');
     div_papca.classList.add('div_all_class_document');
-    for (let i of katalog()){
-      div_papca.appendChild(this.button_temn(i[0]));
+    console.log(Object.keys(katalog()))
+    for (let i of Object.keys(katalog())){
+      div_papca.appendChild(this.button_temn(i));
     }
     return div_papca
   }
@@ -71,36 +72,35 @@ class ALL_2 {
     return div_papca;
   }
 
-  div_form_ayrc(name_documents) {
+  div_form_ayrc(div_start, name_documents) {
     const div_papca_1 = document.createElement('div');
     div_papca_1.classList.add('new_ind');
 
-
-    for (const name_floader_files of name_documents[1]) {
-      const div_child = this.div_form_temn(name_floader_files, name_documents[0]);
+    console.log(name_documents)
+    for (const name_floader_files of name_documents) {
+      const div_child = this.div_form_temn(name_floader_files, div_start);
       div_papca_1.appendChild(div_child);
     }
 
 
 
     const div_papca = document.createElement('div');
-    div_papca.appendChild(this.h5_form_temn(name_documents[0]));
+    div_papca.appendChild(this.h5_form_temn(div_start));
     div_papca.classList.add('new_inst');
     div_papca.appendChild(div_papca_1)
     // Последний `return` должен быть этим
     return div_papca;
   }
-  setup_group(){
+  setup_group(div_start){
     const div_papca = document.createElement('div');
     div_papca.classList.add('u1200u');
-    for (let i of katalog()){
-      div_papca.appendChild(this.div_form_ayrc(i));
-    }
+    console.log(katalog()[div_start])
+    div_papca.appendChild(this.div_form_ayrc(div_start, katalog()[div_start]));
     return div_papca
   }
-  div_setup_final() {
-    const div = this.setup_group();
+  div_setup_final(div_start) {
+    const div = this.setup_group(div_start);
     document.body.appendChild(div);
   }
 }
-(new ALL_2).div_setup_final()
+(new ALL_2).div_setup_final("Основные документы СГУ")
