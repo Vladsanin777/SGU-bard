@@ -1,4 +1,6 @@
 .div_all_class_document{
   display: block;
-  border-radius: 70px;
+  border-radius: 50px;
+  text-align: center;
+  margin: 5px
 }

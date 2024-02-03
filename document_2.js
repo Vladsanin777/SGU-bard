@@ -11,6 +11,8 @@ class ALL_1 {
       }
       (new ALL_2).div_setup_final(button_name)
       smenadizaina_1()
+      resizeWindow()
+      resizeWindow_2()
     });
     return button_file;
   }
@@ -46,18 +48,20 @@ class ALL_2 {
     const button_file = document.createElement('button');
     button_file.classList.add('new_univer_op_b');
     button_file.textContent = button_name;
+    console.log('documents/' + documentsUniver + '/' + nameFolder + '/' + buttonName);
     button_file.addEventListener('click', () => {
       location.href = 'documents/' + documentsUniver + '/' + nameFolder + '/' + buttonName;
+      console.log('documents/' + documentsUniver + '/' + nameFolder + '/' + buttonName);
     });
     return button_file;
   }
 
-  div_form_ayrc_2(name_floader_files, name_documents) {
+  div_form_ayrc_2(name_floader_files, name_documents, nameFolder) {
     const div_papca = document.createElement('div');
     div_papca.classList.add('new_univer_op');
-    const mk = Object.keys(name_floader_files)
-    for (const file of Object.values(name_floader_files)) {
-      div_papca.appendChild(this.button_temn(file, mk, name_documents));
+    console.log(name_floader_files)
+    for (const file of name_floader_files) {
+      div_papca.appendChild(this.button_temn(file, nameFolder, name_documents));
     }
     return div_papca;
   }
@@ -73,7 +77,7 @@ class ALL_2 {
     const div_papca = document.createElement('div');
     div_papca.classList.add('new_univer_15');
     div_papca.appendChild(this.h5_form_ayrc(name_floader));
-    div_papca.appendChild(this.div_form_ayrc_2(name_floader_files, name_documents));
+    div_papca.appendChild(this.div_form_ayrc_2(name_floader_files, name_documents, name_floader,));
 
     return div_papca;
   }
