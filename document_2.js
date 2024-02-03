@@ -5,7 +5,12 @@ class ALL_1 {
     button_file.classList.add('new_univer_op_b');
     button_file.textContent = button_name;
     button_file.addEventListener('click', () => {
-
+      const divs = document.querySelectorAll(".u1200u")
+      for ( let group of divs){
+        group.parentNode.removeChild(group)
+      }
+      (new ALL_2).div_setup_final(button_name)
+      smenadizaina_1()
     });
     return button_file;
   }
@@ -50,8 +55,9 @@ class ALL_2 {
   div_form_ayrc_2(name_floader_files, name_documents) {
     const div_papca = document.createElement('div');
     div_papca.classList.add('new_univer_op');
-    for (const file of name_floader_files[1]) {
-      div_papca.appendChild(this.button_temn(file,  name_floader_files[0], name_documents));
+    const mk = Object.keys(name_floader_files)
+    for (const file of Object.values(name_floader_files)) {
+      div_papca.appendChild(this.button_temn(file, mk, name_documents));
     }
     return div_papca;
   }
@@ -63,10 +69,10 @@ class ALL_2 {
     return h5_1;
   }
 
-  div_form_temn(name_floader_files, name_documents) {
+  div_form_temn(name_floader_files, name_floader, name_documents) {
     const div_papca = document.createElement('div');
     div_papca.classList.add('new_univer_15');
-    div_papca.appendChild(this.h5_form_ayrc(name_floader_files[0]));
+    div_papca.appendChild(this.h5_form_ayrc(name_floader));
     div_papca.appendChild(this.div_form_ayrc_2(name_floader_files, name_documents));
 
     return div_papca;
@@ -77,8 +83,8 @@ class ALL_2 {
     div_papca_1.classList.add('new_ind');
 
     console.log(name_documents)
-    for (const name_floader_files of name_documents) {
-      const div_child = this.div_form_temn(name_floader_files, div_start);
+    for (const name_floader in name_documents) {
+      const div_child = this.div_form_temn(name_documents[name_floader], name_floader, div_start);
       div_papca_1.appendChild(div_child);
     }
 

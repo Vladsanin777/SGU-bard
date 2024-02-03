@@ -40,6 +40,10 @@ function smenadizaina(){
         random = random_color()
     }
     window.n_random = random
+    smenadizaina_1()
+}
+function smenadizaina_1(){
+
     document.querySelector(".logo_sgu").style.backgroundColor = temn_color();
     document.querySelector(".SGU_zagolovok").style.backgroundColor = temn_color();
     for ( let group of document.querySelectorAll(".new_univer_1")){
