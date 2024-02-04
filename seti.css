@@ -1,4 +1,29 @@
+.button_set{
+    width: 15vw;
+    height: 15vw;
+    border-radius: 3vw;
+    text-align: center;
+}
 .img_set{
-  width: 10vw;
-  height: 10vw;
+    width: 10vw;
+    height: 10vw;
+}
+.sotset{
+    border-radius: 50vw;
+    display:flex;
+}
+.div_all_set{
+    width: 80vw;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+.div_set{
+    margin-top: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sotset{
+    font-size: 5vw;
 }

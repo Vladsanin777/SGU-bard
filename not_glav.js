@@ -19,7 +19,7 @@ function resizeWindow_not_glav_button(){
 
 function resizeWindow_not_glav_div(){
     var size_bi_1 = size_px(size_gl(50))
-    var widthInPixels = size_px(size_slolbets_div_not_glav() + 200)
+    var widthInPixels = size_px(size_slolbets_div_not_glav() + 150)
     var size_margin = size_px(size_margin_div_not_glav())
     for (let div of document.querySelectorAll('.new_univer_15')) {
         div.style.paddingBottom = size_bi_1;

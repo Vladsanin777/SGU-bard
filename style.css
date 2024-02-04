@@ -53,12 +53,15 @@ h1 {
 }
 
 
+.SGU_zagolovok{
+    border-radius: 50vw;
+}
 
-
-
+.button_5{
+    border-radius: 50vw;
+}
 
 button{
-    border-radius: 50vw;
     border-width: 0.4vw;
     color: rgb(255, 255, 255);
     box-shadow: 0px 0px 2vw rgba(255, 255, 255, 1);
