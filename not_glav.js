@@ -28,6 +28,7 @@ function resizeWindow_not_glav_div(){
         div.style.width = widthInPixels;
         div.style.margin = size_margin
     }
+    console.log(widthInPixels)
 }
 
 

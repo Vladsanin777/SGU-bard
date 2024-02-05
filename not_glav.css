@@ -17,9 +17,7 @@
     margin: 15px;
     padding: 10px
 }
-.u1200u{
-    display: grid;
-}
+
 .new_inst{
     display: block;
 }
@@ -30,9 +28,7 @@
     text-align: center;
     justify-content: center;
 }
-.u1200u{
-    display: grid;
-}
+
 .new_ind {
     justify-content: center;
     display: flex;
