@@ -5,7 +5,7 @@ class ALL_1 {
     button_file.classList.add('new_univer_op_b');
     button_file.textContent = button_name;
     button_file.addEventListener('click', () => {
-      const divs = document.querySelectorAll(".u1200u")
+      const divs = document.querySelectorAll(".new_inst")
       for ( let group of divs){
         group.parentNode.removeChild(group)
       }
@@ -35,7 +35,7 @@ class ALL_1 {
 
 class ALL_2 {
   h5_form_temn(h5_name) {
-    const h5_1 = document.createElement('h5');
+    const h5_1 = document.createElement('h1');
     h5_1.classList.add('new_univer_1');
     h5_1.textContent = h5_name;
     return h5_1;
@@ -67,7 +67,7 @@ class ALL_2 {
   }
 
   h5_form_ayrc(name_floader) {
-    const h5_1 = document.createElement('h5');
+    const h5_1 = document.createElement('h2');
     h5_1.classList.add('new_univer_1236');
     h5_1.textContent = name_floader;
     return h5_1;
@@ -101,16 +101,8 @@ class ALL_2 {
     // Последний `return` должен быть этим
     return div_papca;
   }
-  setup_group(div_start){
-    const div_papca = document.createElement('div');
-    div_papca.classList.add('u1200u');
-    console.log(katalog()[div_start])
-    div_papca.appendChild(this.div_form_ayrc(div_start, katalog()[div_start]));
-    return div_papca
-  }
   div_setup_final(div_start) {
-    const div = this.setup_group(div_start);
-    document.body.appendChild(div);
+    document.body.appendChild(this.div_form_ayrc(div_start, katalog()[div_start]));
   }
 }
 (new ALL_2).div_setup_final("Основные документы СГУ")

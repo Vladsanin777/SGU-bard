@@ -1,11 +1,9 @@
 .new_univer_15{
     border-radius: 70px;
-    width: 550px;
 }
 
 .new_univer_1236{
     margin: 25px;
-    font-size: 35px;
     border-radius: 50px;
     color: rgb(255, 255, 255);
     text-align: center;
@@ -17,7 +15,6 @@
 }
 .new_univer_op_b{
     margin: 15px;
-    font-size: 30px;
     padding: 10px
 }
 .u1200u{
@@ -28,10 +25,10 @@
 }
 
 .new_univer_1{
-    font-size: 35px;
     border-radius: 50px;
     color: rgb(255, 255, 255);
     text-align: center;
+    justify-content: center;
 }
 .u1200u{
     display: grid;

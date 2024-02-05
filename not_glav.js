@@ -10,8 +10,10 @@ function size_margin_div_not_glav(){
 }
 function resizeWindow_not_glav_button(){
     var size_bi = size_px(size_f(2))
+    const size_font = size_px(window.innerWidth / window.innerHeight * 10 + 10)
     for (let button of document.querySelectorAll('.new_univer_op_b')) {
         button.style.borderRadius = size_bi;
+        button.style.fontSize = size_font;
     }
     console.log("ДА")
 }
