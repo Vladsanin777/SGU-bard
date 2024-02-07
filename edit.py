@@ -19,20 +19,16 @@ def documents_update():
     for _i in os.listdir(path="documents"):
         p = {}  # Use a dictionary for each subfolder
 
-        # Ensure consistent encoding for reliable handling of Russian characters:
-        encoded_i = _i.encode("utf-8").decode("utf-8")
+        for _n in os.listdir(path=f"documents/{_i}"):
+            p[_n] = os.listdir(path=f"documents/{_i}/{_n}")  # Assign files to subfolder key
 
-        for _n in os.listdir(path=f"documents/{encoded_i}"):
-            encoded_n = _n.encode("utf-8").decode("utf-8")
-            p[encoded_n] = os.listdir(path=f"documents/{encoded_i}/{encoded_n}")  # Assign files to subfolder key
+        l[_i] = p  # Add subfolder with files to main dictionary
 
-        l[encoded_i] = p  # Add subfolder with files to main dictionary
 
-    l_json = json.dumps(l, ensure_ascii=False)  # Convert dictionary to JSON string, preserving non-ASCII characters
-    print(f"Предварительно:\n{l_json}\nПредворительно///")  # Print JSON string
+    print(f"Предварительно:\n{l}\nПредворительно///")  # Print JSON string
 
     # Assuming `edit_js` is a function to edit JavaScript files:
-    edit_js(l_json, 1, "document_spisok.js")
+    edit_js(l, 1, "document_spisok.js")
 
     print(l)  # Print the final dictionary
 
