@@ -12,7 +12,7 @@
             <img class = "logo_png" src = "img/tild3061-3763-4539-b438-313933663938____Нов.png" alt="Логотип СГУ">
         </button>
         <div class = "zagolovok">
-            <button class = "SGU_zagolovok" id = "firework">Саратовский государственный университет</button>
+            <button class = "SGU_zagolovok" id="confetti-button">Саратовский государственный университет</button>
             <div class = "osnov_view">
                 <button class = "button_5" onclick="location.href='index.html'">Главная</button>
                 <button class = "button_5" onclick="location.href='history.html'">История</button>
@@ -101,18 +101,26 @@
         </div>
     </div>
     -->
-    <canvas id = "fireworks-canvas"></canvas>
+    <canvas class="fireworks-canvas"></canvas>
     <script src = "clik_logo.js"></script>
     <!--<canvas id="fireworks-canvas"></canvas>-->
-    <script src="js/fireworks.js"></script>
-    <script>
-        function fn_setup() {
-            document.getElementById("firework").addEventListener("click", () => {
-                (new All_render_form).setup()
-            });
-        };
-        fn_setup();
-    </script>
+
     <script src="glav.js"></script>
+    <script src="js/confiti.js"></script>
+    <script>
+        // Подключите библиотеку
+        const confetti = new Confetti();
+
+        // Инициализируйте эффект
+        confetti.init({
+            target: 'confetti-button',
+        });
+
+        // Запустите конфетти при нажатии
+        document.getElementById('confetti-button').addEventListener('click', () => {
+            confetti.fire();
+        });
+
+    </script>
 </body>
 </html>
