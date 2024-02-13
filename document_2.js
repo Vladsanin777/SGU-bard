@@ -19,7 +19,6 @@ class ALL_1 {
   setup_group(){
     const div_papca = document.createElement('div');
     div_papca.classList.add('div_all_class_document');
-    console.log(Object.keys(katalog()))
     for (let i of Object.keys(katalog())){
       div_papca.appendChild(this.button_temn(i));
     }
@@ -48,18 +47,15 @@ class ALL_2 {
     const button_file = document.createElement('button');
     button_file.classList.add('new_univer_op_b');
     button_file.textContent = button_name;
-    console.log('documents/' + documentsUniver + '/' + nameFolder + '/' + buttonName);
-    button_file.addEventListener('click', () => {
-      location.href = 'documents/' + documentsUniver + '/' + nameFolder + '/' + buttonName;
-      console.log('documents/' + documentsUniver + '/' + nameFolder + '/' + buttonName);
-    });
-    return button_file;
+    const a_file = document.createElement('a');
+    a_file.href = 'documents/' + documentsUniver + '/' + nameFolder + '/' + buttonName;
+    a_file.appendChild(button_file)
+    return a_file;
   }
 
   div_form_ayrc_2(name_floader_files, name_documents, nameFolder) {
     const div_papca = document.createElement('div');
     div_papca.classList.add('new_univer_op');
-    console.log(name_floader_files)
     for (const file of name_floader_files) {
       div_papca.appendChild(this.button_temn(file, nameFolder, name_documents));
     }
@@ -86,7 +82,7 @@ class ALL_2 {
     const div_papca_1 = document.createElement('div');
     div_papca_1.classList.add('new_ind');
 
-    console.log(name_documents)
+
     for (const name_floader in name_documents) {
       const div_child = this.div_form_temn(name_documents[name_floader], name_floader, div_start);
       div_papca_1.appendChild(div_child);

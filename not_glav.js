@@ -15,7 +15,6 @@ function resizeWindow_not_glav_button(){
         button.style.borderRadius = size_bi;
         button.style.fontSize = size_font;
     }
-    console.log("ДА")
 }
 
 
@@ -28,7 +27,6 @@ function resizeWindow_not_glav_div(){
         div.style.width = widthInPixels;
         div.style.margin = size_margin
     }
-    console.log(widthInPixels)
 }
 
 
