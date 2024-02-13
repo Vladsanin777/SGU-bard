@@ -26,7 +26,10 @@ class ALL_1 {
   }
   setup_div_final(){
     const div = this.setup_group();
-    document.body.appendChild(div);
+    const div_1 = document.createElement('div');
+    div_1.classList = "osnova_document"
+    div_1.appendChild(div)
+    document.body.appendChild(div_1);
   }
 }
 (new ALL_1).setup_div_final()
@@ -98,7 +101,7 @@ class ALL_2 {
     return div_papca;
   }
   div_setup_final(div_start) {
-    document.body.appendChild(this.div_form_ayrc(div_start, katalog()[div_start]));
+    document.querySelector(".osnova_document").appendChild(this.div_form_ayrc(div_start, katalog()[div_start]));
   }
 }
 (new ALL_2).div_setup_final("Основные документы СГУ")
