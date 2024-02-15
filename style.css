@@ -4,10 +4,17 @@
     box-sizing: border-box;
 }
 
+.a_glav{
+    display: flex;
+}
 body{
     background-attachment: fixed;
     background-size: cover;
     background-position: center top;
+}
+
+canvas{
+    z-index: -10;
 }
 
 .osnova_glav{

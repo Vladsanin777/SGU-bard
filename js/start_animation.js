@@ -24,7 +24,8 @@ function randomInRange(min, max) {
         shapes: ['circle'],
         gravity: randomInRange(0.4, 0.6),
         scalar: randomInRange(0.4, 1),
-        drift: randomInRange(-0.4, 0.4)
+        drift: randomInRange(-0.4, 0.4),
+        zIndex: -10
     });
 
     if (timeLeft > 0) {
@@ -53,6 +54,6 @@ function frame_1() {
 };
 document.querySelector('.SGU_zagolovok').addEventListener('click', () => {
     console.log("f");
-    end = Date.now() + (15 * 1000)
+    end = Date.now() + 1000;
     frame_1();
 });
