@@ -13,6 +13,8 @@ class ALL_1 {
       smenadizaina_1()
       resizeWindow()
       resizeWindow_2()
+      format_document()
+      format_style()
     });
     return button_file;
   }
@@ -90,7 +92,6 @@ class ALL_2 {
       const div_child = this.div_form_temn(name_documents[name_floader], name_floader, div_start);
       div_papca_1.appendChild(div_child);
     }
-
 
 
     const div_papca = document.createElement('div');

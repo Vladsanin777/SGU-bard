@@ -79,48 +79,46 @@ function size_f(sensitivity){
     return (((a - b) / (a + b) * 100) + 100) / sensitivity;
 }
 
-function resizeWindow_logo_sgu() {
-    var widthInPixels = size_vw(size_f(13) + 6)
-    button = document.querySelector(".logo_sgu");
-    button.style.width = widthInPixels;
-    button.style.height = widthInPixels;
-    button.style.marginRight = size_vw(size_f(30))
-    button.style.marginTop = size_vw(size_f(100))
-}
-
 
 
 function resizeWindow_button_5(){
     for ( var button of document.querySelectorAll(".button_5")){
-        button.style.width = size_vw(size_f(15) + 10);
+        button.style.width = "15vw";
         button.style.height = size_vw(size_f(120) + 3);
         button.style.fontSize = size_vw(size_f(80) + 1);
         button.style.marginRight = size_vw(size_f(80));
         button.style.marginLeft = size_vw(size_f(80));
+        if (window.innerHeight / window.innerWidth < 1.1){
+            button.style.height = "5vh"
+        }else if(window.innerHeight / window.innerWidth > 1.8){
+            button.style.height = "2vh"
+        }else{
+            button.style.height = "3vh"
+        }
     }
 }
 
 function resizeWindow_SGU_zagolovok(){
     const button = document.querySelector(".SGU_zagolovok")
+    if (window.innerHeight / window.innerWidth < 1.1){
+        button.style.height = "5vh"
+    }else if(window.innerHeight / window.innerWidth > 1.8){
+        button.style.height = "2vh"
+    }else{
+        button.style.height = "3vh"
+    }
+
     button.style.marginBottom = size_vw(size_f(180) + 1)
-    button.style.fontSize = size_vw(size_f(140) + 2.7);
-    button.style.height = size_vw(size_f(120) + 3);
     button.style.fontSize = size_vw(size_f(80) + 1);
-    button.style.width = size_vw(size_f(5) + 45);
+    button.style.width = "65vw";
+    
 }
 
-function resizeWindow_logo_png(){
-    const img = document.querySelector(".logo_png")
-    var widthInPixels = size_vw(size_f(20) + 5)
-    img.style.width = widthInPixels;
-    img.style.height = widthInPixels;
-}
+
 
 function resizeWindow(){
-    resizeWindow_logo_sgu();
     resizeWindow_button_5();
     resizeWindow_SGU_zagolovok();
-    resizeWindow_logo_png();
 }
 
 
