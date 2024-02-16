@@ -107,3 +107,42 @@ button:not(:hover) {
     justify-content: center;
     align-items: center;
 }
+.container {
+    height: 300px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+  }
+  
+  /* Добавьте стили для изменения цвета скроллбара при прокрутке */
+  
+  .container::-webkit-scrollbar {
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .container:hover::-webkit-scrollbar {
+    background-color: #ddd;
+  }
+  
+  .container::-webkit-scrollbar-thumb {
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .container:hover::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+  }
