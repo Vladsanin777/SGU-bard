@@ -83,33 +83,41 @@ function size_f(sensitivity){
 
 function resizeWindow_button_5(){
     for ( var button of document.querySelectorAll(".button_5")){
-        button.style.width = "15vw";
-        button.style.height = size_vw(size_f(120) + 3);
         button.style.marginRight = size_vw(size_f(80));
         button.style.marginLeft = size_vw(size_f(80));
-        if (window.innerHeight / window.innerWidth < 1.2){
-            button.style.height = "5vh"
-        }else if(window.innerHeight / window.innerWidth > 1.8){
+        if (window.innerHeight / window.innerWidth < 1){
+            button.style.height = "4vh"
+            button.style.width = "20vh"
+            button.style.fontSize = "2vh"
+        }else if(window.innerHeight / window.innerWidth > 1.7){
             button.style.height = "2vh"
+            button.style.fontSize = "1vh"
+            button.style.width = "8vh"
         }else{
             button.style.height = "3vh"
+            button.style.fontSize = "2vh"
+            button.style.width = "12vh"
         }
     }
 }
 
 function resizeWindow_SGU_zagolovok(){
     const button = document.querySelector(".SGU_zagolovok")
-    if (window.innerHeight / window.innerWidth < 1.1){
-        button.style.height = "5vh"
-    }else if(window.innerHeight / window.innerWidth > 1.8){
+    if (window.innerHeight / window.innerWidth < 1){
+        button.style.height = "4vh"
+        button.style.width = "75vh";
+        button.style.fontSize = "2vh"
+    }else if(window.innerHeight / window.innerWidth > 1.7){
         button.style.height = "2vh"
+        button.style.width = "30vh";
+        button.style.fontSize = "1vh"
     }else{
         button.style.height = "3vh"
+        button.style.width = "45vh";
+        button.style.fontSize = "2vh"
     }
 
     button.style.marginBottom = size_vw(size_f(180) + 1)
-    button.style.width = "65vw";
-    
 }
 
 

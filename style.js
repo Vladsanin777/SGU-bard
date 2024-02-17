@@ -1,13 +1,13 @@
 function format_style(){
     console.log(window.innerHeight / window.innerWidth)
-    if (window.innerHeight / window.innerWidth < 1.2){
+    if (window.innerHeight / window.innerWidth < 1){
         logo_img = document.querySelector(".logo_png");
         logo_img.style.height = "10vh";
         logo_img.style.width = "10vh";
         logo_button = document.querySelector(".logo_sgu");
         logo_button.style.height = "15vh";
         logo_button.style.width = "15vh";
-    }else if(window.innerHeight / window.innerWidth > 1.8){
+    }else if(window.innerHeight / window.innerWidth > 1.7){
         logo_img = document.querySelector(".logo_png");
         logo_img.style.height = "4vh";
         logo_img.style.width = "4vh";
