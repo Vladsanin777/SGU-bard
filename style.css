@@ -114,19 +114,19 @@ button:not(:hover) {
   }
   
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 1vw;
     height: 10px;
-    background-color: #f5f5f5;
+    background-color: #f5f5f500;
     border-radius: 5px;
   }
   
   ::-webkit-scrollbar-thumb {
-    background-color: #ccc;
+    background-color: #ffffff66;
     border-radius: 5px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #aaa;
+    background-color: #ffffffb6;
   }
   
   /* Добавьте стили для изменения цвета скроллбара при прокрутке */

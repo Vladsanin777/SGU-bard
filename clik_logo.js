@@ -85,10 +85,9 @@ function resizeWindow_button_5(){
     for ( var button of document.querySelectorAll(".button_5")){
         button.style.width = "15vw";
         button.style.height = size_vw(size_f(120) + 3);
-        button.style.fontSize = size_vw(size_f(80) + 1);
         button.style.marginRight = size_vw(size_f(80));
         button.style.marginLeft = size_vw(size_f(80));
-        if (window.innerHeight / window.innerWidth < 1.1){
+        if (window.innerHeight / window.innerWidth < 1.2){
             button.style.height = "5vh"
         }else if(window.innerHeight / window.innerWidth > 1.8){
             button.style.height = "2vh"
@@ -109,7 +108,6 @@ function resizeWindow_SGU_zagolovok(){
     }
 
     button.style.marginBottom = size_vw(size_f(180) + 1)
-    button.style.fontSize = size_vw(size_f(80) + 1);
     button.style.width = "65vw";
     
 }

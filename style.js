@@ -1,6 +1,6 @@
 function format_style(){
     console.log(window.innerHeight / window.innerWidth)
-    if (window.innerHeight / window.innerWidth < 1.1){
+    if (window.innerHeight / window.innerWidth < 1.2){
         logo_img = document.querySelector(".logo_png");
         logo_img.style.height = "10vh";
         logo_img.style.width = "10vh";

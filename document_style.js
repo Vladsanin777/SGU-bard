@@ -13,16 +13,16 @@ function format_document(){
     var div_1 = document.querySelector(".osnova_document");
     var div_3 = document.querySelector(".new_inst");
     div_2.style.borderRadius = "50px";
-    if (window.innerHeight / window.innerWidth < 1.1){
-        div_3.style.height = "80vh";
-        div_2.style.height = "80vh";
+    if (window.innerHeight / window.innerWidth < 1.2){
+        div_3.style.height = "78vh";
+        div_2.style.height = "78vh";
+        div_2.style.width = "20vw"
         div_2.style.overflowY = "scroll";
         div_3.style.overflowY = "scroll";
-        div_3.style.width = "70vw"
+        div_3.style.width = "78vw"
         div_1.style.display = "flex";
         div_2.style.display = "grid";
         div_2.style.paddingBottom = size_px(window.innerWidth / 50);
-        div_2.style.width = size_px(window.innerWidth * 0.01 + 300);
         div_2.style.margin = size_px(window.innerWidth / 50 + 3);
         div_2.style.marginTop = "0px";
     }else{
