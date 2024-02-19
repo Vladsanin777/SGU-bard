@@ -13,7 +13,6 @@ function resizeWindow_not_glav_button(){
     const size_font = size_px(window.innerWidth / window.innerHeight * 10 + 10)
     for (let button of document.querySelectorAll('.new_univer_op_b')) {
         button.style.borderRadius = size_bi;
-        button.style.fontSize = size_font;
     }
 }
 
