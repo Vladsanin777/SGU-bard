@@ -1,0 +1,30 @@
+h2{
+    color:rgb(255, 255, 255)
+}
+.new_univer_15{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.libraries_1{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.but_lib{
+    width: 50vw;
+    margin: 1vh;
+}
+h2{
+    font-size: 5vw;
+}
+h5{
+    font-size: 3vw;
+}
+.new_univer_15{
+    width: 60vw;
+}
