@@ -24,6 +24,8 @@
     color: rgb(255, 255, 255);
     text-align: center;
     justify-content: center;
+    height: 4vh;
+    font-size: 3vh;
 }
 
 .new_ind {
